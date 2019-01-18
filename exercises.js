@@ -260,6 +260,25 @@ printOrders(arrayOfObjects);
         to inspect your results.
 */
 
+var sumObj = {
+    a: 12,
+    b: 21,
+    result: undefined
+}
+
+// is there any way to pass an object key as a parameter? i guess not since there's nothing to reference...
+// function objectAddition(yourObject,objNum1,objNum2) {
+//     yourObject.result = yourObject.objNum1 + yourObject.objNum2;
+//     return yourObject;
+// }
+
+function objectAddition(yourObject) {
+    yourObject.result = yourObject.a + yourObject.b;
+    return yourObject;
+}
+
+var sumObjResult = objectAddition(sumObj);
+console.log(sumObjResult);
 
 /*
 9. Print sum function and add as new key-value
@@ -277,7 +296,13 @@ printOrders(arrayOfObjects);
         Invoke this function and pass in your object. Further test by changing the values of the object being passed in or 
         **create more** objects and invoke your function multiple times.
  */
-
+function printObj(yourResObj) {
+    yourResObj.output = yourResObj.a+' + '+yourResObj.b+' = '+yourResObj.result
+    console.log(yourResObj.output);
+    return yourResObj;
+}
+var sumPrintResultObj = printObj(sumObjResult);
+console.log(sumPrintResultObj);
 
 /*
 10. Putting stuff in `plainBox`
