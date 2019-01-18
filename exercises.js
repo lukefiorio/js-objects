@@ -89,6 +89,14 @@ console.log(kicks);
   console.log the object
 */
 
+// our empty object;
+var plainBox = {};
+
+plainBox.color = 'blue';
+plainBox.size = 4;
+plainBox.contents = [];
+
+console.log(plainBox);
 
 /*
 5. Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
@@ -101,6 +109,16 @@ console.log(kicks);
     console.log the object
 */
 
+
+var stockCar = {
+    model: 'Ford',
+    year: 2005,
+    automaticTransmission: true,
+    driver: null,
+    passengers: []
+}
+
+console.log(stockCar);
 
 /*
 
@@ -118,6 +136,20 @@ console.log(kicks);
    the return value in a variable named `completePerson`. Use `console.log` three times to print the entire object, just 
    the value at `name`, and just the value at `age`.
  */
+
+var plainPerson = {}
+
+function buildPerson(person,nameString,age) {
+    person.name = nameString;
+    person.age = age;
+    return person;
+}
+
+var completePerson = buildPerson(plainPerson,'luke',30);
+console.log(completePerson);
+console.log(completePerson.name);
+console.log(completePerson.age);
+
 
 
 /*
