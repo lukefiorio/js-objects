@@ -410,3 +410,29 @@ console.log(stockCarWithDriver);
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+
+
+
+var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+
+function addPassengers(carObj,carRiderNames,carRiderAges) {
+    var objRider = {};
+    for (var i=0; i<carRiderNames.length; i++) {
+        objRider[i] = {};
+        carObj.passengers[i] = buildPerson(objRider[i],carRiderNames[i],carRiderAges[i]);
+    }
+    return carObj;
+}
+
+var stockCarWithRiders = addPassengers(stockCar,passengerList,passengerAges);
+console.log(stockCarWithRiders);
+
+// sad that I couldn't access the "items" within the "array"
+function displayPassengers(obj) {
+    for (var i=0;i<Object.values(obj.passengers).length; i++) {
+        console.log(Object.values(obj.passengers[i])+", is riding dirty!");
+    }
+}
+
+displayPassengers(stockCarWithRiders);;
